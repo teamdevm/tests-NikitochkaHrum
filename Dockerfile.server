@@ -1,0 +1,29 @@
+# Установка базового образа Python
+FROM python:3.10.6
+
+# Установка переменной окружения PYTHONUNBUFFERED для более лучшего вывода логов
+ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update \
+    && apt-get install -y \
+        python3-pip \
+        chromium \
+        chromium-driver \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the path to the Chromium binary
+# Set environment variables for Chromium
+ENV CHROME_BIN=/usr/bin/chromium
+ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
+
+# Установка рабочей директории внутри контейнера
+WORKDIR /app
+COPY . /app/
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+# Определение порта, на котором будет работать Django-приложение
+EXPOSE 8000
+
+# Команда запуска Django-сервера
+CMD python manage.py migrate products && python manage.py runserver 0.0.0.0:8000

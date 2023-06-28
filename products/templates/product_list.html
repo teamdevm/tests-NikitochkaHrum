@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+
+{% for product in products %}
+<div class="product-container">
+  <div class="product-image">
+    <img src="{% static 'product_images/'|add:product.image %}" alt="{{ product.name }}">
+  </div>
+  <div class="product-details">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+    <p class="product-price">${{ product.price }}</p>
+    <div class="product-actions">
+      <button class="buy-button">Buy</button>
+      <input type="number" class="count-input" min="1" value="1">
+    </div>
+  </div>
+</div>
+{% empty %}
+<p>No products available.</p>
+{% endfor %}

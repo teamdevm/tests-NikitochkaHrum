@@ -1,0 +1,52 @@
+[
+    {
+      "model": "products.product",
+      "pk": 1,
+      "fields": {
+        "name": "T-Shirt",
+        "price": 19.99,
+        "description": "Comfortable cotton t-shirt",
+        "category": "Tops"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 2,
+      "fields": {
+        "name": "Jeans",
+        "price": 49.99,
+        "description": "Classic denim jeans",
+        "category": "Bottoms"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 3,
+      "fields": {
+        "name": "Dress",
+        "price": 59.99,
+        "description": "Elegant evening dress",
+        "category": "Dresses"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 4,
+      "fields": {
+        "name": "Shoes",
+        "price": 39.99,
+        "description": "Stylish sneakers",
+        "category": "Shoes"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 5,
+      "fields": {
+        "name": "Jacket",
+        "price": 79.99,
+        "description": "Warm winter jacket",
+        "category": "Outerwear"
+      }
+    }
+  ]  
